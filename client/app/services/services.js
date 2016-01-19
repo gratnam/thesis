@@ -13,7 +13,20 @@ services.factory('Plants', ['$http', function($http){
     });
   }
 
+  var addUser = function(user) {
+    return $http({
+      method: 'POST',
+      url: 'api/users/addUser',
+      params: user
+    }).then(function(response) {
+      console.log('SUCCESSFUL POST FOR ADDUSER')
+    }).catch(function(error) {
+      console.log(error);
+    });
+  }
+  
   return {
-    addPlant: addPlant
+    addPlant: addPlant,
+    addUser: addUser
   }
 }]);

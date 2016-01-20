@@ -44,15 +44,38 @@ services.factory('Plants', ['$http', function($http){
 }]);
 
 services.factory('Users', ['$http', function($http){
-  var addUser = function(user) {
+      // // Saves the user data to the db
+      // $http.post('/users', userData)
+      //     .success(function (data) {
+
+      //         // Once complete, clear the form (except location)
+      //         $scope.formData.username = "";
+      //         $scope.formData.password = "";
+      //         $scope.formData.email = "";
+      //         $scope.formData.userPic = "";
+              
+      //     })
+      //     .error(function (data) {
+      //         console.log('Error: ' + data);
+      //     });
+
+
+  var addUser = function(userObj) {
     return $http({
       method: 'POST',
       url: 'api/users/addUser',
-      params: user
+      data: userObj
     }).then(function(response) {
-      console.log('SUCCESSFUL POST FOR ADDUSER')
+
+      console.log('SUCCESSFUL POST FOR ADDUSER');
+      
+      // Once complete, clear the form (except location)
+      $scope.formData.username = "";
+      $scope.formData.password = "";
+      $scope.formData.email = "";
+      $scope.formData.userPic = "";
     }).catch(function(error) {
-      console.log(error);
+      console.log('ERROR FOR ADDUSER', error);
     });
   }
   
@@ -81,5 +104,5 @@ services.factory('ProfileInfo', ['$http', function($http){
     getProfile: getProfile,
     setProfile: setProfile
   }
-  
+
 }]);

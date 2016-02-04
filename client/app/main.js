@@ -14,7 +14,8 @@ var main = angular.module('greeniusApp',
 	'plantProfileDirective',
 	'services',
 	'ui.router',
-	'ui.calendar']);
+	'ui.calendar',
+  'ui.bootstrap']);
 
 main.config(function (authProvider){
   authProvider.init({
@@ -132,13 +133,6 @@ main.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($
 			},
       data: {requiresLogin : true}
 		})
-		// .state('navbar.dashboard.calendar', {
-		// 	url: '/calendar',
-		// 	views: {
-				
-		// 	},
-  //     data: {requiresLogin : true}
-		// })
 		.state('navbar.browsePlant', {
 			url: '/browseplant',
 			views: {

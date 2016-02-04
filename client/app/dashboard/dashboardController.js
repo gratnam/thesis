@@ -1,9 +1,9 @@
-var dashboard = angular.module('dashboard', []);
+  var dashboard = angular.module('dashboard', []);
 dashboard.controller('dashboardController', ['Plants', 'auth', '$window', '$q','Events', function(Plants, auth, $window, $q, Events){
   var that = this;
   that.data = {};
-    that.data.username = $window.localStorage.getItem('username');
-    that.data.plants = [];
+  that.data.username = $window.localStorage.getItem('username');
+  that.data.plants = [];
   that.totalFlowers = 0;
   that.totalHousePlants = 0;
   that.totalFruits = 0;
@@ -13,7 +13,7 @@ dashboard.controller('dashboardController', ['Plants', 'auth', '$window', '$q','
   that.total_Flowers_HousePlant = 0;
   that.total_Fruits_Vegetables = 0;
   that.total_Herbs_Shrubs = 0;
-
+  that.totalPlants = 0;
 
   that.getEvents = function(){
     Events.getUserEvents(that.data)
@@ -26,7 +26,9 @@ dashboard.controller('dashboardController', ['Plants', 'auth', '$window', '$q','
         console.log(error, 'ERROR INSIDE GETUSEREVENTS CONTROLLER');
       })
   }
-that.getEvents();
+
+  that.getEvents();
+
   that.getSpecieInfo = function(index, plant){
     return Plants.getSpecieById(plant)
       .then(function(speciesResult){
@@ -79,12 +81,13 @@ that.getEvents();
       if (curSpeciesType === 'Shrub'){
         that.totalShrubs++;
       }
+      that.totalPlants = that.data.plants.length;
     }
     that.total_Flowers_HousePlant = that.totalFlowers + that.totalHousePlants;
     that.total_Fruits_Vegetables = that.totalFruits + that.totalVegetables;
     that.total_Herbs_Shrubs = that.totalHerbs + that.totalShrubs;
   };
-
   that.getUserPlants();
+  that.getPlantStats();
 
 }]);

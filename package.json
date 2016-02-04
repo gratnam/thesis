@@ -26,12 +26,6 @@
   },
   "homepage": "https://github.com/GitMoneyCrew/greenius#readme",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-if": "^1.2.5",
-    "gulp-jshint": "^2.0.0",
-    "gulp-karma": "0.0.4",
-    "gulp-nodemon": "^1.0.5",
-    "gulp-shell": "^0.2.11",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "jshint": "^2.9.1",
@@ -40,8 +34,7 @@
     "karma-chrome-launcher": "^0.2.0",
     "karma-cli": "0.0.4",
     "karma-jasmine": "^0.3.6",
-    "karma-nested-reporter": "^0.1.1",
-    "sqlite3": "^3.1.1"
+    "karma-nested-reporter": "^0.1.1"
   },
   "dependencies": {
     "auth0-angular": "^4.1.0",
@@ -54,6 +47,12 @@
     "express-jwt": "^3.3.0",
     "google-auth-library": "^0.9.7",
     "googleapis": "^2.1.7",
+    "gulp": "^3.9.0",
+    "gulp-if": "^1.2.5",
+    "gulp-jshint": "^2.0.0",
+    "gulp-karma": "0.0.4",
+    "gulp-nodemon": "^1.0.5",
+    "gulp-shell": "^0.2.11",
     "gulp-sqlite3": "0.0.1",
     "jshint": "^2.9.1",
     "morgan": "^1.1.1",
@@ -61,6 +60,7 @@
     "nodemailer-smtp-transport": "^2.0.1",
     "pg": "^4.4.4",
     "request": "^2.36.0",
-    "sequelize": "^3.17.3"
+    "sequelize": "^3.17.3",
+    "sqlite3": "^3.1.1"
   }
 }

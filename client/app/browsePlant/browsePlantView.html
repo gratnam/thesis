@@ -1,7 +1,12 @@
 <div class='container-fluid'>
   <div class='row'>
-    <h1>The Greenhouse </h1>
-      <h3> Select plants you want to add to your nursery </h3>
+    <div class='col-md-12'>
+      <h1 class="page-header">
+            The Greenhouse <small>Select plants you want to add to your nursery</small>
+        </h1>
+    </div>
+  </div>
+  <div class='row'>
     <div class = "col-md-3">
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">Filter</span>
@@ -11,8 +16,7 @@
         <a class="list-group-item " ng-show='query' ng-repeat='plant in bpp.plants | filter:query' ng-click = "bpp.changeCommonName(plant)">{{plant}}</a>
       </div>
     </div>
-
-    <div class = 'col-md-9'>
+    <div class = 'col-md-6'>
       <!-- PANEL SHOWS WHEN USER CLICKS PLANT NAME -->
       <div ng-if="bpp.promptToAddPlant === true" class="panel panel-primary">
         <div class="panel-heading">
@@ -21,94 +25,15 @@
         <div class="panel-body">
           <h2>{{bpp.data.commonName}}</h2>
           <h4>{{bpp.data.botanicalName}}</h4>
-<!--
-          <form ng-submit='bpp.specificPlantInfoPrompts();' novalidate>
-            <input type='submit' value='Do you want to build a snowman?'></input>
-          </form>
-          <form ng-submit='bpp.addPlant()'novalidate>
-            <input type='text' ng-model='bpp.data.nickname' placeholder='Nickname your plant'></input>
-            <input type='submit' value='Add Plant to My Plants'></input>
-          </form>
- -->
-
           <div class="input-group">
             <input type="text" ng-model='bpp.data.nickname' class="form-control" placeholder="Name your plant...">
             <span class="input-group-btn">
               <button  ng-click ='bpp.addPlant()' class="btn btn-default" type="button">Go!</button>
             </span>
           </div><!-- /input-group -->
-
-
         </div>
       </div>
-
-
-
-<!--
-
-      <form ng-submit='bpp.selectGarden()' name='selectGardenForm' ng-if='bpp.gardenPrompt === true' novalidate>
-        <h4>Select Your Garden :</h4>
-          <select placeholder='Existing Garden'  ng-model='bpp.data.gardenName'>
-            <option value='' disabled selected>Select garden</option>
-            <option ng-repeat='garden in bpp.usersGardenArray track by $index'>{{garden}}</option>
-          </select>
-           or
-          <input type='text' placeholder='Create a New Garden' ng-model='bpp.data.gardenName'>
-        <input type='submit' value='Next'>
-      </form> -->
-
-
-
-
-<!--
-
-      <div ng-if='bpp.tracker === true'>
-          <h2>Plants in {{bpp.data.gardenName}}:</h2>
-          <div>
-            <div ng-repeat='name in bpp.nicknameArray '>
-               <a ng-click='bpp.goToPlant(name.nickname)'>
-                 <p>{{name.nickname}}</p>
-               </a>
-             </div>
-         </div>
-      </div> -->
     </div>
-
-  <!--
-
-        <div>
-          <form ng-submit='bpp.userChoseGarden()' ng-if='bpp.promptToAddPlant === true' novalidate>
-          <input type='submit' value='Do you want to Plant?'></input>
-          </form>
-        </div>
-
-        <div>
-          <form ng-submit='bpp.selectGarden()' name='selectGardenForm' ng-if='bpp.gardenPrompt === true' novalidate>
-            <h4>Select Your Garden :</h4>
-               <select placeholder='Existing Garden'  ng-model='bpp.data.gardenName'>
-                 <option value='' disabled selected>Select garden</option>
-                 <option ng-repeat='garden in bpp.usersGardenArray track by $index'>{{garden}}</option>
-               </select>
-               or
-               <input type='text' placeholder='Create a New Garden' ng-model='bpp.data.gardenName'>
-             <input type='submit' value='Next'>
-           </form>
-            <div>
-            <form ng-submit='bpp.addPlant()' ng-if='bpp.plantInfoPrompts === true' novalidate>
-              <input type='text' ng-model='bpp.data.nickname' placeholder='Nickname your plant'></input>
-              <input type='text' ng-model='bpp.data.plantDate' placeholder='Start plant date?'></input>
-              <input type='submit' value='Add Plant to My Plants'></input>
-            </form>
-            <div ng-if='bpp.tracker === true'>
-              <h2>Plants in {{bpp.data.gardenName}}:</h2>
-              <div>
-                <div ng-repeat='name in bpp.nicknameArray '>
-                   <a ng-click='bpp.goToPlant(name.nickname)'>
-                     <p>{{name.nickname}}</p>
-                   </a>
-                 </div>
-             </div>
-          </div>
-        </div> -->
-    </div>
+    <div class = 'col-md-3'></div>
+  </div>
 </div>

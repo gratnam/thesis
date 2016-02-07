@@ -25,7 +25,6 @@
       <h3>Delete a Garden</h3>
       <form class='form-inline'>
         <select class='form-control' ng-model='mgp.data.gardenDelete'>
-          <option id="disabledInput">Select a Garden</option>
           <option ng-repeat='(key, value) in mgp.gardens'>{{value}}</option>
         </select>
         <button ng-click = 'mgp.deleteGarden()' class='btn btn-danger'>Delete</button>
@@ -49,7 +48,8 @@
                 dnd-moved='mgp.confirm(); list.plants.splice($index, 1)'
                 dnd-canceled='list.plants.splice($index, 1)'
                 ng-init='plant.bucket = list.label'>
-                <div class='handle' >:::</div> <!--different handle based on type?-->
+                <div class='handle' ><i class="fa fa-arrows"></i>
+                </div> <!--different handle based on type?-->
                 <div class='name' dnd-nodrag>{{plant.name}}</div>
             </li>
           </ul>

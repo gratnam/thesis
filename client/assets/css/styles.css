@@ -250,18 +250,14 @@
     margin-top: 5px;
     margin-left: 20px;
 }
-.panel-success{
-  border-color: #5CB854;
-}
 
-}
 .panel-success>.panel-heading {
-    color: #FFFFFF;
-    background-color: #5CB854;
-    border-color: #5CB854;
+    color: #fff;
+    background-color: #3c763d;
+    border-color: #3c763d;
 }
-.panel-danger {
-  border-color: #8F3187;
+.panel-success {
+    border-color: #3c763d;
 }
 .panel-danger>.panel-heading {
     color: #fff;
@@ -269,8 +265,17 @@
     border-color: #8F3187;
 }
 
+.panel-danger{
+  border-color: #8F3187;
+}
+
 .thumbnail {
   border: 0px;
 }
 
+.navbar-brand>img {
+    display: block;
+    width: 150px;
+    margin-top: -12px;
+}
 
